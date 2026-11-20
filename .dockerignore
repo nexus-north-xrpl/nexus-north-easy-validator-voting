@@ -1,0 +1,9 @@
+node_modules/
+data/
+*.log
+.env
+config.json
+test/out/
+.git/
+docs/
+test/

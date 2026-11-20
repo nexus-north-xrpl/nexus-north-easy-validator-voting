@@ -1,0 +1,38 @@
+/* Easy Validator Voting: one small stylesheet, light and dark, readable on a phone. */
+:root{--bg:#f5f7fb;--panel:#fff;--panel2:#eef2f8;--line:#dbe2ee;--ink:#0f172a;--ink2:#475569;--ink3:#64748b;--blue:#1d4ed8;--good:#15803d;--bad:#b91c1c;--warn:#b45309;--bar:#cbd5e1}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1120;--panel:#111a2e;--panel2:#16213a;--line:#24324f;--ink:#e8eefb;--ink2:#a9b6d3;--ink3:#8291b0;--blue:#60a5fa;--good:#4ade80;--bad:#f87171;--warn:#fbbf24;--bar:#2b3a5a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.top{position:sticky;top:0;z-index:5;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:10px;align-items:center}.brand h1{margin:0;font-size:18px}.brand p{margin:0;color:var(--ink3);font-size:13px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button{border:1px solid var(--line);background:var(--panel2);color:var(--ink2);border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:40px}
+.tabs button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+main{max-width:980px;margin:0 auto;padding:14px 16px 30px}
+.note{border:1px solid var(--line);border-left:4px solid var(--warn);background:var(--panel);border-radius:10px;padding:10px 12px;margin:0 0 10px;font-size:14px}
+.note.info{border-left-color:var(--blue)}
+.msg{min-height:1.4em;margin:4px 0 10px;font-weight:600}.msg.ok{color:var(--good)}.msg.bad{color:var(--bad)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 10px}
+.card h3{margin:0;font-size:17px;word-break:break-word}.sum{color:var(--ink2);margin:4px 0 10px;font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;font-size:12.5px;font-weight:700;border:1.5px solid currentColor}
+.pill.yes,.pill.on{color:var(--good)}.pill.no{color:var(--bad)}.pill.off{color:var(--ink3)}.pill.maj{color:var(--warn)}
+.support{flex:1 1 260px;min-width:220px}
+.bar{position:relative;height:10px;border-radius:999px;background:var(--bar);overflow:hidden;margin-top:4px}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--blue);border-radius:999px}
+.bar b{position:absolute;top:-2px;bottom:-2px;left:80%;width:2px;background:var(--ink)}
+.small{font-size:13px;color:var(--ink3)}
+.btns{display:flex;gap:8px;margin-left:auto}
+.btn{min-height:42px;min-width:84px;padding:8px 16px;border-radius:10px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);font:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.yes{border-color:var(--good);color:var(--good)}.btn.no{border-color:var(--bad);color:var(--bad)}.btn.pri{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn[disabled]{opacity:.35;cursor:default}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--ink3);font-weight:600}
+.tw{overflow-x:auto}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-all}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:grid;place-items:center;padding:16px;z-index:20}.modal[hidden]{display:none}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:380px;width:100%;text-align:center}
+.box h2{margin:0 0 8px;font-size:18px}.box img{width:220px;height:220px;max-width:100%;background:#fff;border-radius:12px;padding:8px;margin:8px auto;display:block}
+.box .row{justify-content:center;margin-top:10px}
+footer{max-width:980px;margin:0 auto;padding:0 16px 28px;color:var(--ink3);font-size:13px}
+@media (max-width:640px){.btns{margin-left:0;width:100%}.btns .btn{flex:1}.top{padding:10px 12px}.tabs button{padding:8px 11px}}

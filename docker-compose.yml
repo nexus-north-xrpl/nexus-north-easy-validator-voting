@@ -1,0 +1,19 @@
+# Easy Validator Voting with Docker Compose (Linux).
+#
+# "network_mode: host" lets the container reach rippled's admin port at 127.0.0.1 exactly like rippled's own tools do.
+# Nothing is published to other machines: the page listens on 127.0.0.1:8742 unless you change it in the setup.
+#
+#   docker compose build
+#   docker compose run --rm -it easy-validator-voting node src/setup.js     # first-time setup
+#   docker compose up -d
+services:
+  easy-validator-voting:
+    build: { context: ., dockerfile: docker/Dockerfile }
+    image: easy-validator-voting:1.0.0
+    container_name: easy-validator-voting
+    network_mode: host
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    volumes: ["./data:/data"]          # settings + vote log (create it with: mkdir data && sudo chown 1000:1000 data)
+    restart: unless-stopped

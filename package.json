@@ -1,0 +1,17 @@
+{
+  "name": "nexus-north-easy-validator-voting",
+  "version": "1.0.0",
+  "description": "A small, local web page for XRP Ledger validator operators: see every amendment in plain English and vote Yes or No, with each vote confirmed in Xaman.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "bin": { "easy-validator-voting": "src/server.js" },
+  "scripts": {
+    "start": "node src/server.js",
+    "setup": "node src/setup.js",
+    "check": "node --check src/server.js && node --check src/setup.js"
+  },
+  "dependencies": {},
+  "devDependencies": { "xrpl": "^4.4.0" }
+}
