@@ -4,3 +4,14 @@ data/
 .env
 config.json
 test/out/
+
+# keys, wallets and secrets: never commit these
+*.env
+.env.*
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+validator-keys.json
+wallet.db
+*.db
